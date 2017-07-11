@@ -1,5 +1,6 @@
 # least-squares-regression
 Linear Least Squares Regression with  Eigen Dense Solver using QR decomposition and LU decomposition.
+The program also creates a GNUPlot script to plot the solution polynomial.
 
 ### Usage:
 
