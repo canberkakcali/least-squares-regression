@@ -143,20 +143,20 @@ int main(int argc, char** argv) {
 		
 		
 		MatrixXd v(points.size(), 1); // parse the y values of the points into the Result Vector => (N,1) matrix
-        for(int i=0;i<points.size();i++) {
-        	v(i,0) = points.at(i).y;
+        	for(int i=0;i<points.size();i++) {
+        		v(i,0) = points.at(i).y;
 		}
-        cout << "Result Vector: " << endl << v << endl << endl; // Print the vector
+        	cout << "Result Vector: " << endl << v << endl << endl; // Print the vector
         
         
-        /*
-        *		CALCULATION
-        */
-        
-        
-        MatrixXd Solution(degree+1,1); // A vector matrix to store a,b,c... solution
-        
-        if(flagQR) { // If the "--qr" parameter is passed, use QR decomposition
+		/*
+		*		CALCULATION
+		*/
+
+
+		MatrixXd Solution(degree+1,1); // A vector matrix to store a,b,c... solution
+
+		if(flagQR) { // If the "--qr" parameter is passed, use QR decomposition
 			
 			Solution = A.fullPivHouseholderQr().solve(v);
 			cout << "Linear Least Square System Solution (using QR decomposition): " << endl;
